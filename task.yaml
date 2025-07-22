@@ -1,0 +1,21 @@
+name: 'Task2'
+description: 'Task2 description'
+inputs:
+  out-model-type:
+    description: 'Output model type.'
+    required: true
+  in-model-path:
+    description: 'Input model path.'
+    required: true
+  out-model-path:
+    description: 'Output model path.'
+    required: true
+runs:
+  image: 'ghcr.io/ggml-org/llama.cpp:full'
+  args:
+    - --convert
+    - --outtype
+    - ${{ inputs.out-model-type }}
+    - --outfile
+    - ${{ inputs.out-model-path }}
+    - ${{ inputs.in-model-path }}
