@@ -10,7 +10,7 @@ inputs:
   out-model-path:
     description: 'Output model path.'
     required: true
-runs:
+exec:
   image: 'ghcr.io/ggml-org/llama.cpp:full'
   args:
     - --convert
